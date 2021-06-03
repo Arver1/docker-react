@@ -1,0 +1,7 @@
+sudo: required
+services: 
+ - docker
+ before_install:
+ - docker run build -t arver1/frontend:latest -f test/Dockerfile.dev .
+ after_install:
+ - docker run -d arver1/frontend:latest
