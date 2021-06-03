@@ -1,7 +1,7 @@
 sudo: required
 services: 
   - docker
- before_install:
+before_install:
   - docker build -t arver1/frontend:latest -f test/Dockerfile.dev .
- script:
+script:
   - docker run arver1/frontend:latest
