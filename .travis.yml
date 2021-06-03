@@ -3,5 +3,5 @@ services:
  - docker
  before_install:
  - docker build -t arver1/frontend:latest -f test/Dockerfile.dev .
- after_install:
+ script:
  - docker run arver1/frontend:latest
