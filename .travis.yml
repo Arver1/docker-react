@@ -3,4 +3,4 @@ services:
 before_install:
   - docker build -t arver1/frontend:latest -f test/Dockerfile.dev .
 script:
-  - docker run arver1/frontend:latest npm run test -- --coverage
+  - docker run arver1/frontend:latest npm run test -- --coverage --watchAll
