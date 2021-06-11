@@ -1,7 +1,7 @@
 services: 
   - docker
 before_install:
-  - docker build -t arver1/frontend:latest Dockerfile .
+  - docker build -t arver1/frontend:latest .
 script:
   - docker run arver1/frontend:latest npm run test -- --watchAll=false --coverage
 deploy:
