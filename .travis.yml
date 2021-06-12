@@ -1,16 +1,16 @@
 services: 
   - docker
 before_install:
-  - docker build -t arver1/frontend:latest -f Dockerfile.dev .
+  - docker build -t arver1/frontend -f Dockerfile.dev .
 script:
-  - docker run arver1/frontend:latest npm run test -- --watchAll=false --coverage
+  - docker run arver1/frontend npm run test -- --watchAll=false --coverage
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker"
   env: "Docker-env"
   bucket_name: "elasticbeanstalk-us-east-2-642769327745"
-  busket_path: "docker"
+  bucket_path: "docker"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
